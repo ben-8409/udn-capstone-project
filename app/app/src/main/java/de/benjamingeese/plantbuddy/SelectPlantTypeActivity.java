@@ -1,5 +1,6 @@
 package de.benjamingeese.plantbuddy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -34,7 +33,10 @@ public class SelectPlantTypeActivity extends AppCompatActivity {
         recyclerView.setAdapter(new PlantTypeRecyclerViewAdapter(new PlantTypeRecyclerViewAdapter.PlantTypeClickListener() {
                 @Override
                 public void OnPlantTypeSelected(PlantTypes.PlantType type) {
-                    Toast.makeText(SelectPlantTypeActivity.this, "", Toast.LENGTH_SHORT).show();
+                    Intent toAddPlant = new Intent(SelectPlantTypeActivity.this, AddPlantActivity.class);
+                    toAddPlant.putExtra(AddPlantActivity.EXTRA_PLANT_TYPE_ID, type.id);
+                    toAddPlant.putExtra(AddPlantActivity.EXTRA_PLANT_TYPE_NAME, type.name);
+                    startActivity(toAddPlant);
                 }
             }, PlantTypes.ITEMS));
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -43,13 +45,12 @@ public class SelectPlantTypeActivity extends AppCompatActivity {
     public static class PlantTypeRecyclerViewAdapter
             extends RecyclerView.Adapter<PlantTypeRecyclerViewAdapter.ViewHolder> {
 
-        private static final int TAG_PLANT_ID = 1;
         private final List<PlantTypes.PlantType> mTypes;
         PlantTypeClickListener mSelectListener;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantTypes.PlantType type = (PlantTypes.PlantType) view.getTag(TAG_PLANT_ID);
+                PlantTypes.PlantType type = (PlantTypes.PlantType) view.getTag(R.id.TAG_PLANT_TYPE);
                 if (mSelectListener != null && type != null) {
                     mSelectListener.OnPlantTypeSelected(type);
                 }
@@ -76,6 +77,7 @@ public class SelectPlantTypeActivity extends AppCompatActivity {
             holder.mPlantTypeName.setText(type.name);
 
             holder.itemView.setOnClickListener(mOnClickListener);
+            holder.itemView.setTag(R.id.TAG_PLANT_TYPE, type);
         }
 
         @Override

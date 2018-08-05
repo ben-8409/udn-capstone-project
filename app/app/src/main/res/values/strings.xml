@@ -9,4 +9,5 @@
     <string name="caption_name">Name</string>
     <string name="caption_watering_needs">Watering needs</string>
     <string name="title_select_plant_activity">Select a plant below</string>
+    <string name="btn_add_plant">Add</string>
 </resources>

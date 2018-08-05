@@ -32,7 +32,8 @@
                 <action android:name="de.benjamingeese.plantbuddy.PLANT_DETAIL" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectPlantTypeActivity"></activity>
+        <activity android:name=".SelectPlantTypeActivity" />
+        <activity android:name=".AddPlantActivity"></activity>
     </application>
 
 </manifest>
