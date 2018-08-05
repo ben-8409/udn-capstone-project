@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PlantBuddy</string>
+    <string name="title_trackedplant_detail">TrackedPlant Detail</string>
+    <string name="example_plant_image_desc">A cactus in front of a pink background</string>
+    <string name="default_aspect_ratio" translatable="false">2:3</string>
+    <string name="caption_plant_type">Type</string>
+    <string name="caption_last_watering">Last Watering</string>
+    <string name="caption_next_watering">Next Watering</string>
+    <string name="caption_name">Name</string>
+    <string name="caption_watering_needs">Watering needs</string>
+</resources>
