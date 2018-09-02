@@ -7,5 +7,5 @@
     android:layout_height="match_parent"
     android:numColumns="auto_fit"
     app:layoutManager="android.support.v7.widget.GridLayoutManager"
-    tools:context=".SelectPlantTypeActivity"
+    tools:context=".ui.SelectPlantTypeActivity"
     tools:listitem="@layout/selectplant_list_content" />

@@ -3,6 +3,7 @@
     package="de.benjamingeese.plantbuddy">
 
     <application
+        android:name=".PlantBuddyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +33,7 @@
                 <action android:name="de.benjamingeese.plantbuddy.PLANT_DETAIL" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectPlantTypeActivity" />
+        <activity android:name=".ui.SelectPlantTypeActivity" />
         <activity android:name=".AddPlantActivity"></activity>
     </application>
 
